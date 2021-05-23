@@ -14,7 +14,7 @@ def solution(lottos, win_nums):
                 count2+=1
     answer.append(7-(count+count2) if count+count2 > 0 else 6)
     answer.append(7-count if count>0 else 6)
-    print(answer)
+    
     return answer
 
 solution([0,0,3,4,5,6],[7,8,9,10,11,12])
