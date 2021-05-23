@@ -16,5 +16,3 @@ def solution(lottos, win_nums):
     answer.append(7-count if count>0 else 6)
     
     return answer
-
-solution([0,0,3,4,5,6],[7,8,9,10,11,12])
