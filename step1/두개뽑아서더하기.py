@@ -9,5 +9,3 @@ def solution(numbers):
     answer = list(set(answer))
     answer.sort()
     return answer
-
-solution([1,230,213,222])
