@@ -12,5 +12,3 @@ def solution(nums):
         if is_prime_number(sum(i)) == True:
             answer+=1
     return answer
-
-solution([1,2,7,6,4])
