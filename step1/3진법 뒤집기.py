@@ -7,5 +7,3 @@ def solution(n):
         remain += str(n%3)
     answer = int(remain,3)
     return answer
-
-solution(125)
