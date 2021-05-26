@@ -26,7 +26,7 @@ def solution(a, b):
   elif a==11:
     answer = daydic[(b+305)%7]
   elif a==12:
-    answer = daydic[(b+335)%7]
+    answer = daydic[(b+335)%7] 
   return answer
 
 # import datetime
