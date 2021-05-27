@@ -9,7 +9,7 @@ def solution(a, b):
   # 1월1일은 금요일
   daydic={4:'MON',5:'TUE',6:'WED',0:'THU',1:'FRI',2:'SAT',3:'SUN'}
   if a==1:
-    answer = daydic[b%7]
+    answer = daydic[b%7] 
   elif a==2:
     answer = daydic[(b+31)%7]
   elif a==3:
