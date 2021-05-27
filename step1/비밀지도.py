@@ -10,7 +10,7 @@ def solution(n, arr1, arr2):
     answer[i] = answer[i].replace('0',' ')
   return answer
 
-solution(6,[46,33,33,22,31,50],[27,56,19,14,14,10])
+solution(6,[46,33,33,22,31,50],[27,56,19,14,14,10]) 
 =======
   answer = ['']*n
   for i in range(len(arr1)):
