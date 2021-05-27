@@ -9,5 +9,3 @@ def solution(absolutes, signs):
         else:
             answer -= absolutes.pop()
     return answer
-
-solution([4,7,12],[true,false,true])

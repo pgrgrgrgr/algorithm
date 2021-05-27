@@ -11,5 +11,3 @@ def solution(left, right):
         else:
             answer += i
     return answer
-
-solution(24,27)

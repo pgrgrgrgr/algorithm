@@ -123,8 +123,4 @@ def solution(numbers, hand):
                     leftpoint = numdic[0]
                     answer = answer + "L"
                     numbers.remove(numbers[0])
-
-    print(answer)
     return answer
-
-solution([7, 0, 8, 2, 8, 3, 1, 5, 7, 6, 2],"left")

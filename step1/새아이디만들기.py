@@ -1,6 +1,5 @@
 from string import ascii_lowercase
 
-
 def solution(new_id):
     cnt=0
     cnt2=0
@@ -40,8 +39,4 @@ def solution(new_id):
         while len(new_id)<3:
             new_id = new_id + "%s"%new_id[-1]
     answer = new_id
-    print(answer)
     return answer
-
-
-solution("=.=")

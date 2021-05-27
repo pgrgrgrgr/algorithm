@@ -12,4 +12,4 @@ def solution(answers):
     for key,value in sc.items():
         if value == max(sc.values()):
             answer.append(key+1)
-    return answer
+    return answer 

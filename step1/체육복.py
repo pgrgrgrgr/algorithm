@@ -13,11 +13,4 @@ def solution(n, lost, reserve):
         else:
             binlist.append(bin)
     answer = n - len(binlist)
-    print(answer)
     return answer
-
-solution(5,[2,3,6],[1,2,3,4])
-
-# 2<=n<=30
-# 1<=lost<=n
-# 1<=reserve<=n

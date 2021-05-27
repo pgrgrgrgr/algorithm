@@ -13,6 +13,3 @@ def solution(d, budget):
             break
         
     return answer
-
-solution([1],3)
-solution([2,2,3,3],10)

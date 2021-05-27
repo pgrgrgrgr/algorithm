@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 import datetime
 
+=======
+>>>>>>> 3e880a7693405eb627abdb982d7d4a6c2428d224
 def solution(a, b):
   answer = ''
   # 1월31일 2월29일 3월31 4월30 5월31 6월30 7월31 8월31 9월30 10월31 11월30 12월31
@@ -22,15 +25,32 @@ def solution(a, b):
   elif a==8:
     answer = daydic[(b+213)%7]
   elif a==9:
+<<<<<<< HEAD
     answer = daydic[(b+244)%7]  
+=======
+    answer = daydic[(b+244)%7]
+>>>>>>> 3e880a7693405eb627abdb982d7d4a6c2428d224
   elif a==10:
     answer = daydic[(b+274)%7]
   elif a==11:
     answer = daydic[(b+305)%7]
   elif a==12:
+<<<<<<< HEAD
     answer = daydic[(b+335)%7]
   # days = ['MON','TUE','WED','THU','FRI','SAT','SUN']
   # answer = days[datetime.date(2016,a,b).weekday()]
   print(answer)
   return answer
 solution(9,1)
+=======
+    answer = daydic[(b+335)%7] 
+  return answer
+
+# import datetime
+
+# def solution(a,b):
+  # days = ['MON','TUE','WED','THU','FRI','SAT','SUN']
+  # answer = days[datetime.date(2016,a,b).weekday()]
+  # return answer 
+  
+>>>>>>> 3e880a7693405eb627abdb982d7d4a6c2428d224
