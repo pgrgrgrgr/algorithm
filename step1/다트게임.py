@@ -22,7 +22,7 @@ def solution(dartResult):
           elif strbin[i][j] == 'T':
             scorelist.append(int(strbin[i][j-1])**3)
         elif strbin[i][j] in '#,*':
-          scorelist.append(strbin[i][j])
+          scorelist.append(strbin[i][j]) 
   print(strbin)
   print(scorelist)
   for i in range(len(scorelist)):
