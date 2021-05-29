@@ -12,3 +12,9 @@ def solution(strings, n):
     answer.append(i)
 
   return answer
+
+# def solution(strings, n):
+#   answer = []
+#   answer = sorted(answer,key=lambda x:x[n])
+#   return answer
+# ㅇㄴ..
