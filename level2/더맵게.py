@@ -1,15 +1,16 @@
+import heapq
+
 def solution(scoville, K):
   answer = 0
-  
-  while min(scoville) < K:
-    try:
-      scoville.sort()
-      mixed = scoville[0] + scoville[1] * 2
-      scoville.remove(scoville[0])
-      scoville.remove(scoville[0])
-      scoville.append(mixed)
-      answer += 1
-    except IndexError:
-      return -1
+  heapq.heapify(scoville)
 
+  while scoville[0] < K:
+    mixed = heapq.heappop(scoville) + heapq.heappop(scoville) * 2
+    heapq.heappush(scoville,mixed)
+    answer += 1
+    if len(scoville) == 1 and scoville[0] < K:
+      return -1
+      
   return answer
+
+solution([1,2,3,9,10,12],7)
