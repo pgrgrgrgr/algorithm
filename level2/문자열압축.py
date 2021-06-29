@@ -1,30 +1,42 @@
 def solution(s):
   answer = 0
-  len_answertmp = []
-  strtmp = ''
-  answertmp = ''
+  sliced_tmp = ''
+  answer_tmp = ''
+  answer_list = []
 
   if len(s) == 1:
     return 1
+    
+  for slice in range(1,int(len(s)/2) + 1):
+    sliced_tmp = s[:slice]
+    cnt=1
 
-  for slice in range(1, len(s)//2 + 1):
-    cnt = 1
-    strtmp = s[:slice]
-
-    for tmp in range(slice, len(s), slice):
-      if s[tmp:tmp+slice] == strtmp:
+    for i in range(slice, len(s), slice):
+      if sliced_tmp == s[i:i+slice]:
         cnt += 1
+
       else:
         if cnt == 1:
           cnt = ''
-        answertmp += str(cnt) + strtmp
-        strtmp = s[tmp:tmp+slice]
-        cnt = 1
+          answer_tmp += cnt + sliced_tmp
+          sliced_tmp = s[i:i+slice]
+          cnt = 1
+        else:
+          answer_tmp += str(cnt) + sliced_tmp
+          sliced_tmp = s[i:i+slice]
+          cnt = 1
 
     if cnt == 1:
       cnt = ''
-    answertmp += str(cnt) + strtmp
+      answer_tmp += cnt + sliced_tmp
+    else:
+      answer_tmp += str(cnt) + sliced_tmp
+      cnt = 1
 
-    len_answertmp.append(len(answertmp))
-    answertmp = ''
-  return min(len_answertmp)
+    answer_list.append(len(answer_tmp))
+    answer_tmp = ''
+
+  answer = min(answer_list)
+  return answer
+
+solution("ababcdcdababcdcd")
