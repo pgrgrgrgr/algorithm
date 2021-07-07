@@ -1,13 +1,19 @@
 def solution(priorities, location):
   answer = 0
-  print_dic = {}
-  
-  for i in range(len(priorities)):
-    print_dic[i] = priorities[i]
+  location_array = [i for i in range(len(priorities))]
+  priorities_copy = priorities.copy()
   cnt = 0
-  while priorities:
-    sliced_tmp = priorities[cnt + priorities.index(max(priorities)):-1]
+
+  while True:
+    if priorities_copy[cnt] < max(priorities_copy[cnt+1:]):
+      location_array.append(location_array.pop(cnt))
+      priorities_copy.append(priorities_copy.pop(cnt))
+    else:
+      cnt += 1
+
+    if priorities_copy == sorted(priorities_copy, reverse=True):
+      break
+  
+  answer = location_array.index(location) + 1
 
   return answer
-
-solution([2,1,3,2],2)
