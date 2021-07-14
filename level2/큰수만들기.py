@@ -1,21 +1,13 @@
 def solution(number, k):
   answer = ''
-  answer_length = len(number) - (k-1)
-  tmp='0'
-  idcnt=0
-  while len(answer) != answer_length - 1:
-    end = -(answer_length-len(answer)-2)
-    for i in range(len(number[0:end])):
-      if tmp < number[i]:
-        tmp = number[i]
-        idcnt = i
-      if tmp == '9':
-        break
-    answer += tmp
-    tmp = '0'
+  bignum = []
 
-    number = number[0:idcnt] + number[idcnt+1:]
-  print(answer)
+  for i in number:
+    while bignum and bignum[-1] < i and k>0:
+      k-=1
+      bignum.pop()
+    bignum.append(i)
+
+  answer = "".join(bignum[:len(bignum)-k])
+
   return answer
-
-solution('4177252841',4)
