@@ -1,18 +1,14 @@
 def solution(phone_book):
   answer = True
-  phone_book.sort()
-  pbdic = {}
-  tmp=[]
-  for i in range(len(phone_book)):
-    pbdic[phone_book[i]] = len(phone_book[i])
-  for i in sorted(set(pbdic.values())):
-    for j in pbdic.keys():
-      j = j[:i]
-      tmp.append(j)
-    if len(tmp) != len(set(tmp)) and len(tmp[1:]) == len(set(tmp[1:])):
-      return False
-    else:
-      tmp.clear()
+  pb_dic = {}
+  for phone_num in phone_book:
+    pb_dic[phone_num] = 1
 
-
+  for phone_num in phone_book:
+    tmp = ""
+    for number in phone_num:
+      tmp += number
+      if tmp in pb_dic and tmp != phone_num:
+        answer = False
+        
   return answer
