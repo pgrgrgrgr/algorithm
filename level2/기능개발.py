@@ -1,6 +1,7 @@
 def solution(progresses, speeds):
   answer = []
   queue=[]
+  
   while progresses:
     while progresses[0] < 100:
       for i in range(len(progresses)):
