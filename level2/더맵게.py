@@ -12,5 +12,3 @@ def solution(scoville, K):
       return -1
       
   return answer
-
-solution([1,2,3,9,10,12],7)
