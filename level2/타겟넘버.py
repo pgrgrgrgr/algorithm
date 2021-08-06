@@ -19,5 +19,3 @@ def solution(numbers, target):
     if i[0] == target:
       answer += 1
   return answer
-
-print(solution([1,1,1,1,1],3))
