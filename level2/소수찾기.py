@@ -36,5 +36,3 @@ def solution(numbers):
       answer -= 1
       
   return answer
-
-solution('0293')
