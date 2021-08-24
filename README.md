@@ -1,2 +1,2 @@
-# programmers
-study programmers code
+# algorithm
+study algorithm
