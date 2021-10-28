@@ -1,10 +1,12 @@
 #include <iostream>
+#include <string>
 #include <stack>
+
 using namespace std;
 
 int main() {
 	stack<int> nums;
-	stack<char> outputs;
+	string outputs = "";
 
 	int N;
 	cin >> N;
@@ -13,31 +15,28 @@ int main() {
 	int input;
 	int idx = 1;
 
-	do
-	{
+	for (int i = 0; i < N; i++) {
 		cin >> input;
-		if (!(nums.size())) {
-			for (int i = 1; i <= input; i++) {
-				nums.push(i); outputs.push('+');
-				idx++;
-			}
-			nums.pop(); outputs.push('-');
+
+		while (idx <= input) {
+			nums.push(idx);
+			idx += 1;
+			outputs += '+';
 		}
-		else if (nums.top() < input) {
-			for (int i = idx; i <= input; i++) {
-				nums.push(i); outputs.push('+');
-				idx++;
-			}
-			nums.pop(); outputs.push('-');
-		}
-		else if (nums.top() == input) {
-			nums.pop(); outputs.push('-');
+
+		if (nums.top() == input) {
+			nums.pop();
+			outputs += '-';
 		}
 		else {
 			cout << "NO";
 			return 0;
 		}
-	} while (nums.size());
+	}
+
+	for (int i = 0; i < outputs.length(); i++) {
+		cout << outputs[i] << "\n";
+	}
 
 	
 
