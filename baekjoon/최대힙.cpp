@@ -31,6 +31,7 @@ int pop() {
 
     swap(&heap[1], &heap[heapCount]);
     heapCount = heapCount - 1;
+    
 
     int parent = 1;
     int child = parent * 2;
