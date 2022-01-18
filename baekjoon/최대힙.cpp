@@ -1,6 +1,37 @@
+#include<stdio.h>
+#include<iostream>
+#include<queue>
+
+using namespace std;
+
+int n;
+priority_queue<int> pq;
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    cin >> n;
+    while (n--) { 
+        int x; 
+        cin >> x;
+        if (x == 0) { 
+            if (pq.empty()) cout << "0\n";
+            else {
+                cout << pq.top() << "\n";
+                pq.pop();
+            }
+        }
+        else { 
+            pq.push(x);
+        }
+    }
+    return 0;
+}
+
+/*
 #include <iostream>
-#define HEAP_SIZE 256
-#define ARRAY_SIZE 10
+#define HEAP_SIZE 100000
 
 using namespace std;
 int heap[HEAP_SIZE];
@@ -27,11 +58,13 @@ void push(int x) {
 }
 
 int pop() {
+    if (heapCount == 0)return 0;
+
     int ret = heap[1];
 
     swap(&heap[1], &heap[heapCount]);
+    heap[heapCount] = 0;
     heapCount = heapCount - 1;
-    
 
     int parent = 1;
     int child = parent * 2;
@@ -61,14 +94,10 @@ int main() {
     for (int i = 0; i < N; i++) {
         int j;
         cin >> j;
-        if (j == 0) {
-            if (heap[1] == 0)cout << 0;
-            else cout << pop();
 
-        }
-        else {
-            push(j);
-        }
+        if (j == 0) cout << pop();
+        else push(j);
     }
+
     return 0;
-}
+} */
