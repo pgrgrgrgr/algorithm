@@ -1,8 +1,3 @@
-n = 3
+a = (3,0)
 
-step = [
-    [0] * n
-    for _ in range(n)
-]
-
-print(step)
+print(sum(a))
