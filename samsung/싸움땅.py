@@ -35,7 +35,7 @@ dxs, dys = [-1, 0, 1, 0], [0, 1, 0, -1]
 
 # 필요 함수 선언
 def in_grid(x, y):
-  return x > 0 and x < n + 1 and y > 0 and y < n + 1
+  return 0 < x < n + 1 and 0 < y < n + 1 # 대수 비교
 
 def is_player(x, y):
   for i in range(m):
@@ -46,12 +46,10 @@ def is_player(x, y):
 def go_opposite(player, direction):
   player_grid[player][0] += dxs[direction - 2]
   player_grid[player][1] += dys[direction - 2]
-  if(player_direction[player] <= 1):
-    player_direction[player] += 2
-  else:
-    player_direction[player] -= 2
+  player_direction[player] = (player_direction[player]+2) % 4 # if문 간결하게
+  
 #0상 1우 2하 3좌
-def go_right(player, direction):
+def go_right(player):
   while(True):
     if(in_grid(player_grid[player][0] + dxs[player_direction[player]], player_grid[player][1] + dys[player_direction[player]]) and not is_player(player_grid[player][0] + dxs[player_direction[player]], player_grid[player][1] + dys[player_direction[player]])):
       player_grid[player][0] += dxs[player_direction[player]]
@@ -62,6 +60,7 @@ def go_right(player, direction):
         player_direction[player] += 1
       else:
         player_direction[player] = 0
+      # player_direction[player] = (player_direction[player] + 1) % 4
 
 def is_match(grid):
   return player_grid.count(grid)
@@ -88,7 +87,10 @@ def simulate():
       for j in range(m):
         if(player_grid[i] == player_grid[j]):
           versus.append(j)
+      
       if(sum(player_stat[versus[0]]) > sum(player_stat[versus[1]])):
+        #코드 겹치는 거
+        #변수명 좀 짧게
         points[versus[0]] += abs(sum(player_stat[versus[0]]) - sum(player_stat[versus[1]]))
         gun_grid[player_grid[i][0]][player_grid[i][1]].append(player_stat[versus[1]][1])
         gun_grid[player_grid[i][0]][player_grid[i][1]] = list(reversed(gun_grid[player_grid[i][0]][player_grid[i][1]]))
